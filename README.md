@@ -25,16 +25,16 @@ mvn spring-boot:run
 #### Option B: Using VS Code Tasks
 Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) and select `Tasks: Run Task` → `spring-boot:run`
 
-The application will start on `http://localhost:8080`
+The application will start on `http://localhost:8888`
 
 ### 3. Test the API
 
 Open your browser or use curl:
 ```bash
-curl http://localhost:8080/api/hello
+curl http://localhost:8888/
 ```
 
-Expected response: `Hello World!`
+Expected response: `Hello World! Current server time is: [timestamp]`
 
 ## Debugging with Breakpoints
 
@@ -45,7 +45,7 @@ Expected response: `Hello World!`
 2. **Set a breakpoint**:
    - Click on the left margin (line number gutter) next to the line where you want to pause
    - A red dot will appear indicating the breakpoint is set
-   - Example: Set a breakpoint on line 13 in `HelloWorldController.java` (the `return "Hello World!";` line)
+   - Example: Set a breakpoint on line 15 in `HelloWorldController.java` (the `return greeting;` line)
 
 3. **Start debugging**:
    - Press `F5` (or click Run → Start Debugging)
@@ -55,7 +55,7 @@ Expected response: `Hello World!`
 4. **Trigger the breakpoint**:
    - Open your browser or use curl to hit the endpoint:
      ```bash
-     curl http://localhost:8080/api/hello
+     curl http://localhost:8888/
      ```
    - The debugger will pause at your breakpoint
    - You can now:
@@ -109,8 +109,14 @@ The project includes pre-configured debug settings in `.vscode/launch.json`:
 
 ## Ports
 
-- `8080`: Spring Boot application
+- `8888`: Spring Boot application
 - `5005`: Java debug port (JDWP)
+
+## Technology Stack
+
+- Java 21
+- Spring Boot 3.4.0
+- Maven 3.9.6
 
 ## Troubleshooting
 
@@ -121,8 +127,8 @@ The project includes pre-configured debug settings in `.vscode/launch.json`:
 
 ### Port already in use?
 ```bash
-# Find and kill the process using port 8080
-lsof -ti:8080 | xargs kill -9
+# Find and kill the process using port 8888
+lsof -ti:8888 | xargs kill -9
 ```
 
 ### Application won't start?
