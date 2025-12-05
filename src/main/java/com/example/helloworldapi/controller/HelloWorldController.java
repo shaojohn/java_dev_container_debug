@@ -10,6 +10,8 @@ public class HelloWorldController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello World!";
+        String timeString = java.time.LocalDateTime.now().toString();
+        String greeting = "Hello World! Current server time is: " + timeString;
+        return greeting;
     }
 }
