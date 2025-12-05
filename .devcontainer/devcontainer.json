@@ -23,7 +23,7 @@
             }
         }
     },
-    "forwardPorts": [8080, 5005],
+    "forwardPorts": [8888, 5005],
     "postCreateCommand": "mvn clean install",
     "remoteUser": "vscode"
 }
