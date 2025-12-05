@@ -15,7 +15,10 @@ buildNumber.properties
 *.iml
 *.iws
 *.ipr
-.vscode/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
 .settings/
 .classpath
 .project
