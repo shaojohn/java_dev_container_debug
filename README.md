@@ -118,6 +118,19 @@ The project includes pre-configured debug settings in `.vscode/launch.json`:
 - Spring Boot 3.4.0
 - Maven 3.9.6
 
+## GitHub Actions CI/CD
+
+This project includes a GitHub Actions workflow that automatically builds and tests the application on every push or pull request to `main` branches.
+
+### What the workflow does:
+1. Sets up JDK 21
+2. Builds the project with Maven
+3. Runs all tests
+4. Packages the application as a JAR
+5. Uploads the built artifact
+
+The workflow configuration is in `.github/workflows/maven-build.yml`.
+
 ## Troubleshooting
 
 ### Breakpoints not working?
